@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_white_layout">
+
+    <ImageView
+        android:id="@+id/btPayCancel"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:src="@drawable/image_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvAmountPayable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Amount Payable"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintTop_toBottomOf="@+id/btPayCancel" />
+
+    <TextView
+        android:id="@+id/PleaseProvode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:fontFamily="@font/lexend_deca_light"
+        android:text="Please Provide your CVV number to upgrade Membership."
+        android:textAlignment="center"
+        android:textColor="#333333"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAmountPayable" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rl11"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_125sdp"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:background="@drawable/orange_line_oval_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PleaseProvode">
+
+        <TextView
+            android:id="@+id/tvCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@null"
+            android:hint="****   ****   ****   5674"
+            android:fontFamily="@font/lexend_deca_light"
+            android:textColor="#333333"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:src="@drawable/master_guard"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCardHolderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCardNumber"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:text="William Mark"
+            android:fontFamily="@font/lexend_deca_light"
+            android:textColor="#333333"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCardNumber" />
+
+        <TextView
+            android:id="@+id/tvExpireDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/lexend_deca_light"
+            android:textColor="#333333"
+            android:text="Exp date:03/2025"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCardHolderName" />
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvExpireDate"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/cvv_bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvExpireDate">
+
+            <EditText
+                android:id="@+id/etCvvVerification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_semibold"
+                android:hint="Enter CVV"
+                android:paddingLeft="@dimen/_8sdp"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:textColor="#333333"
+                android:textSize="@dimen/_10ssp" />
+
+            <ImageView
+                android:id="@+id/er"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/etCvvVerification"
+                android:src="@drawable/errr" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/btPayNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvExpireDate"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/orange_button_identity"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:text="Pay Now"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvExpireDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

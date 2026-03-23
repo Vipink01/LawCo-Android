@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+    <LinearLayout
+        android:id="@+id/viewClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CVForMainImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
+            <ImageView
+                android:id="@+id/tvProfile"
+                android:layout_width="@dimen/_68sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/demo_user" />
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvAttorneyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp" />
+            <TextView
+                android:id="@+id/tvTypeofAttorney"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/lexend_deca"
+                android:text=""
+                android:textColor="#424242"
+                android:textSize="@dimen/_8ssp" />
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/lexend_deca"
+                android:text=""
+                android:textColor="#424242"
+                android:drawablePadding="@dimen/_3sdp"
+                android:drawableStart="@drawable/location_away"
+                android:textSize="@dimen/_8ssp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/btViewProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="View Profile"
+                    android:textColor="#2196F3"
+                    android:textSize="@dimen/_8ssp" />
+                <TextView
+                    android:id="@+id/tvAcceptedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="end"
+                    android:layout_toRightOf="@id/btViewProfile"
+                    android:fontFamily="@font/lexend_deca"
+                    android:textSize="@dimen/_8ssp"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

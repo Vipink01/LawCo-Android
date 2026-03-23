@@ -1,0 +1,71 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.LawCo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <!-- Primary brand color. -->
+ <!--       <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/bg</item>
+        <item name="colorOnPrimary">@color/black</item>
+        &lt;!&ndash; Secondary brand color. &ndash;&gt;
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+   <item name="android:statusBarColor">@color/black</item>
+     <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">#FF264B9B</item>
+        <item name="colorPrimaryVariant">#FF264B9B</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#FF264B9B</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#000000</item>
+    </style>
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+
+    <style name="CornerCut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+
+    <style name="CustomProgressBarTheme">
+
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="CustomAutocompleteTheme"
+        parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- Important -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <!-- Status bar visible rahe -->
+    <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Edge-to-edge disable -->
+      <item name="android:windowLayoutInDisplayCutoutMode">never</item>
+
+    </style>
+
+
+</resources>

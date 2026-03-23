@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_9ssp"
+        android:fontFamily="@font/lexend_deca"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        app:drawableStartCompat="@drawable/green_tick" />
+</LinearLayout>

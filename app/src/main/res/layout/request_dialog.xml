@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Root -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/card_request_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@drawable/crosh_bottom"
+            android:layout_height="wrap_content"/>
+
+       <ImageView
+           android:layout_width="@dimen/_80sdp"
+           android:layout_gravity="center"
+           android:background="@drawable/viewheader"
+           android:layout_height="@dimen/_5sdp"/>
+
+        <!-- Card Holder -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Connection Request"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Subject"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_13ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center|top|start"
+            android:background="@drawable/card_request_send"
+            android:fontFamily="@font/lexend_deca_light"
+            android:padding="@dimen/_8sdp">
+            <EditText
+                android:id="@+id/etSubject"
+                android:layout_width="match_parent"
+                android:hint="Enter Subject"
+                android:background="@null"
+                android:textSize="@dimen/_13sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:gravity="start|center"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <!-- Card Number -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Describe Your Legal Problem"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center|top|start"
+            android:background="@drawable/card_request_send"
+            android:fontFamily="@font/lexend_deca_light"
+            android:padding="@dimen/_8sdp">
+            <EditText
+                android:id="@+id/etCardNumber"
+                android:layout_width="match_parent"
+                android:hint="Description"
+                android:background="@null"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="start|center|top"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Upload Related Documents"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <TextView
+            android:id="@+id/tvDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/montserrat"
+            android:text="Download the available below documents."
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:textSize="@dimen/_10ssp" />
+
+        <ImageView
+            android:id="@+id/imgUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/uploadimage"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcyData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_upload"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"/>
+        </LinearLayout>
+
+        <!-- Button -->
+        <LinearLayout
+            android:id="@+id/btnShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/_2sdp">
+            <TextView
+                android:id="@+id/Cancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/black"
+                android:layout_alignParentEnd="true"
+                android:text="Cancel"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:background="@drawable/orange_button_ring"/>
+
+            <TextView
+                android:id="@+id/yes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:text="Send Request"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"
+                android:background="@drawable/orange_button_identity"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Your information is shared securely and only with the selected attorney."
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+</RelativeLayout>

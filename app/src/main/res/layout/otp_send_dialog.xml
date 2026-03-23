@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <!-- Bottom card container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/card_request_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/_8sdp">
+
+        <!-- Close button -->
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/crosh_bottom"
+            android:contentDescription="@string/todo" />
+
+        <!-- Decorative header line -->
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            android:background="@drawable/viewheader"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <!-- Body content -->
+        <LinearLayout
+            android:id="@+id/llBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verification_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_24sdp"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"/>
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_the_verification_code_sent_to_your_registered_email_phone"
+                android:textAlignment="center"
+                android:textColor="#424242"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/lexend_deca"
+                android:layout_margin="@dimen/_10sdp" />
+
+            <!-- Submit button -->
+            <TextView
+                android:id="@+id/textSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/orange_button_identity"
+                android:gravity="center"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold" />
+
+            <!-- Didn't receive OTP -->
+            <RelativeLayout
+                android:id="@+id/rlDidntReceiveOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <TextView
+                    android:id="@+id/textDidntReceive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/didn_t_receive_the_verification_code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/lexend_deca" />
+
+                <TextView
+                    android:id="@+id/textResend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/textDidntReceive"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="@string/resend"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/lexend_deca" />
+            </RelativeLayout>
+
+            <!-- Resend timer line -->
+            <RelativeLayout
+                android:id="@+id/rlResendLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/_50sdp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textResendotp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resend_verification_code_in"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    android:fontFamily="@font/lexend_deca" />
+
+                <TextView
+                    android:id="@+id/textTimeResend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/textResendotp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/_00_00"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_13ssp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

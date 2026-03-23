@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="consumerHomeScreenViewModel"
+            type="com.business.lawco.networkModel.homeScreen.consumer.ConsumerHomeScreenViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.consumerfragment.filterAttrony.FilterAttorneyFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:visibility="gone"
+            app:layout_constraintHeight_max="@dimen/_120sdp"
+            app:layout_constraintHeight_min="@dimen/_38sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/recyclerAttorneySearch"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:scrollbarSize="@dimen/_5sdp"
+                   android:scrollbarThumbVertical="@color/orange"
+                   android:scrollbarTrackVertical="@color/line"
+                   android:scrollbars="vertical"
+                   tools:listitem="@layout/item_view" />
+               <TextView
+                   android:id="@+id/tv_noData"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/black"
+                   android:layout_marginTop="@dimen/_20sdp"
+                   android:layout_centerInParent="true"
+                   android:visibility="gone"
+                   android:text="No Data Found"/>
+           </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dark_blue_bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btBack"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/arrow_white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvSelectedAttorney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Selected Attorneys"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/search_white_bg"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/btFilter"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectedAttorney">
+
+
+                <EditText
+                    android:id="@+id/EtSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@null"
+                    android:fontFamily="@font/lexend_deca_light"
+                    android:hint="Search an Attorney"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:textAlignment="textStart"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/item_clear_click_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/search_id"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/item_clear_icon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/cross_like"
+                        app:tint="#090000" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/search_id"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp">
+
+                    <ImageView
+                        android:id="@+id/item_menu_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/search_bar" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+                android:background="@drawable/filter_orange_bg"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingTop="@dimen/_9sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectedAttorney">
+
+                <ImageView
+                    android:id="@+id/imageFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/filter_vector" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/FilterRefreshList"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Head">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Head">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvSelectedAttorney"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/selected_attorney_list" />
+                <TextView
+                    android:id="@+id/textNoDataFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Data Found"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/orange_dark"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+<!--        <com.agrawalsuneet.dotsloader.loaders.CircularDotsLoader-->
+<!--            android:layout_width="@dimen/_50sdp"-->
+<!--            android:layout_height="@dimen/_50sdp"-->
+<!--            android:elevation="@dimen/_10sdp"-->
+<!--            android:visibility="@{consumerHomeScreenViewModel.isLoading?View.VISIBLE:View.GONE,default = gone}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:loader_animDur="80"-->
+<!--            app:loader_bigCircleRadius="25dp"-->
+<!--            app:loader_circleRadius="@dimen/_5sdp"-->
+<!--            app:loader_defaultColor="@color/grey"-->
+<!--            app:loader_firstShadowColor="@color/grey"-->
+<!--            app:loader_secondShadowColor="@color/grey"-->
+<!--            app:loader_selectedColor="@color/red"-->
+<!--            app:loader_showRunningShadow="true"-->
+<!--            tools:ignore="MissingClass" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

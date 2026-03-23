@@ -1,0 +1,25 @@
+<!-- custom_popup_menu_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/editMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/deleteMenuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_marginEnd="20dp" />
+
+</LinearLayout>

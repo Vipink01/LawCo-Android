@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerInParent="true"
+    android:layout_marginHorizontal="@dimen/_20sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="25dp"
+    android:layout_marginTop="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_30sdp">
+
+
+        <ImageView
+            android:layout_width="@dimen/_74sdp"
+            android:layout_height="@dimen/_74sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_alert_circel_icon"
+            android:layout_marginTop="@dimen/_19sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_12sdp"/>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Verification Could\n Not Be Completed"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:layout_marginBottom="@dimen/_12sdp" />
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Some of the information provided\n does not match our records."
+            android:fontFamily="@font/lexend_deca"
+            android:textColor="#333333"
+            android:textSize="@dimen/_13ssp"
+            android:textAlignment="center"
+            android:lineHeight="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_25sdp" />
+
+        <!-- Go To My Profile Button -->
+        <TextView
+            android:id="@+id/btnUpdateInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_7sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="Update Information &amp; Retry"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/white"
+            android:background="@drawable/orange_button_identity"
+            android:layout_marginBottom="@dimen/_15sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/if_you_continue_to_experience_issues_please_contact_support_for_assistance"
+            android:fontFamily="@font/lexend_deca_light"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            android:textAlignment="center"
+            android:lineHeight="@dimen/_15sdp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

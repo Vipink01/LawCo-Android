@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CardForCatogeries"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_80sdp"
+    android:elevation="0dp"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:id="@+id/LlCatogeries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ImageCatogeries"
+            android:layout_width="@dimen/_62sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingRight="@dimen/_12sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/adoption_credit_card" />
+
+        <TextView
+            android:id="@+id/TextCategoriesRcv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:paddingLeft="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            android:text="Adoption"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

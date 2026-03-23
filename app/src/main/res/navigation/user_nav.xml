@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav"
+    app:startDestination="@id/attronyHomeFragment">
+
+    <fragment
+        android:id="@+id/attronyHomeFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.attronyhome.AttorneyHomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_logFragment"
+            app:destination="@id/logFragment" />
+        <action
+            android:id="@+id/action_attronyHomeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_attronyHomeFragment_to_subscriptionsFragment"
+            app:destination="@id/subscriptionsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.log.LogFragment"
+        android:label="fragment_log"
+        tools:layout="@layout/fragment_log" >
+        <action
+            android:id="@+id/action_logFragment_to_homeFragment"
+            app:destination="@id/attronyHomeFragment" />
+        <action
+            android:id="@+id/action_logFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+        <action
+            android:id="@+id/action_logFragment_to_subscriptionsFragment"
+            app:destination="@id/subscriptionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+
+        android:name="com.business.lawco.fragment.attronyfragment.userdetails.UserDetailFragment"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail" >
+        <action
+            android:id="@+id/action_userDetailFragment_to_logFragment"
+            app:destination="@id/logFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.business.lawco.fragment.SettingsFragment"
+
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/attronyHomeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_termAndConditionFragment"
+            app:destination="@id/termAndConditionFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_subscriptionsFragment"
+            app:destination="@id/subscriptionsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.business.lawco.fragment.settingFragment.myprofile.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_myProfileFragment_to_otpVerificationFragment"
+            app:destination="@id/otpVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.business.lawco.fragment.settingFragment.aboutus.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.business.lawco.fragment.settingFragment.privacypolicy.PrivacyPolicyFragment"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" >
+        <action
+            android:id="@+id/action_privacyPolicyFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/termAndConditionFragment"
+
+        android:name="com.business.lawco.fragment.settingFragment.termscondition.TermAndConditionFragment"
+        android:label="fragment_term_and_condition"
+        tools:layout="@layout/fragment_term_and_condition" >
+        <action
+            android:id="@+id/action_termAndConditionFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionsFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.subscription.SubscriptionsFragment"
+        android:label="fragment_subscriptions"
+        tools:layout="@layout/fragment_subscriptions" >
+        <action
+            android:id="@+id/action_subscriptionsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_subscriptionsFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.payment.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_subscriptionsFragment"
+            app:destination="@id/subscriptionsFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.transaction.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.business.lawco.fragment.settingFragment.notification.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_notificationsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_attronyHomeFragment"
+            app:destination="@id/attronyHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.business.lawco.fragment.settingFragment.contactus.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" >
+        <action
+            android:id="@+id/action_contactUsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.business.lawco.fragment.OtpVerificationFragment"
+        android:label="OtpVerificationFragment" />
+
+</navigation>

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="consumerHomeScreenViewModel"
+            type="com.business.lawco.networkModel.homeScreen.consumer.ConsumerHomeScreenViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        tools:context=".fragment.consumerfragment.attronydetails.AttorneyDetailsFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/dark_blue_bg"
+            android:padding="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/arrow_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Attorney Details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_80sdp">
+
+                <RelativeLayout
+                    android:id="@+id/attorney_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:id="@+id/detailsimage_Cardview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_2sdp"
+                            app:cardCornerRadius="@dimen/_8sdp">
+
+                            <ImageView
+                                android:id="@+id/tvProfile"
+                                android:layout_width="@dimen/_85sdp"
+                                android:layout_height="@dimen/_95sdp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/demo_user" />
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/detailsimage_Cardview"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvAttorneyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:id="@+id/tvAreaOfWork"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lexend_deca"
+                            android:text=""
+                            android:textColor="#424242"
+                            android:textSize="@dimen/_12sdp"/>
+
+                        <LinearLayout
+                            android:id="@+id/attorney_Location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/location_on_black" />
+
+                            <TextView
+                                android:id="@+id/tvLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textSize="@dimen/_11sdp"
+                                android:fontFamily="@font/lexend_deca"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:text=""
+                                android:textColor="#424242" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/attorney_Distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/location_away" />
+
+                            <TextView
+                                android:id="@+id/tvDistance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:fontFamily="@font/lexend_deca"
+                                android:text=""
+                                android:textSize="@dimen/_11sdp"
+                                android:textColor="#424242" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/showActive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/active_bg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_4sdp"
+                            android:src="@drawable/active_logo_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:text="Active"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9sdp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/btConnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_100sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/orange_button_identity"
+                    android:padding="@dimen/_5sdp"
+                    android:fontFamily="@font/lexend_deca"
+                    android:text="Connect"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/attorney_details" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contactCallBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btConnect">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:id="@+id/btnCall"
+                            android:layout_width="135dp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/orange_button_identity">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_marginLeft="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_9sdp"
+                                android:src="@drawable/phone_white_filled" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="@dimen/_52sdp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:fontFamily="@font/lexend_deca"
+                                android:gravity="center"
+                                android:text="Call"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/btnMessage"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_6sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/message_grey_about">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_marginLeft="@dimen/_40sdp"
+                                android:layout_marginTop="@dimen/_9sdp"
+                                android:src="@drawable/message_grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="11dp"
+                                android:layout_marginLeft="@dimen/_52sdp"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:layout_toEndOf="@+id/imageView2"
+                                android:fontFamily="@font/lexend_deca_medium"
+                                android:text="Text"
+                                android:textColor="#424242"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/callEnableBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ADFFFFFF" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/layRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:weightSum="2"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/contactCallBox">
+
+                    <TextView
+                        android:id="@+id/btnRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/orange_button_identity"
+                        android:fontFamily="@font/lexend_deca"
+                        android:gravity="center"
+                        android:text="View Details"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/attorney_About"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="@drawable/about_bg_button"
+                    android:weightSum="2"
+                    app:layout_constraintTop_toBottomOf="@+id/contactCallBox">
+
+
+                    <TextView
+                        android:id="@+id/btAbout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/orange_button_identity"
+                        android:fontFamily="@font/lexend_deca"
+                        android:gravity="center"
+                        android:text="About"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:id="@+id/btContact"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Contact"
+                        android:fontFamily="@font/lexend_deca"
+                        android:textColor="#80101010"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aboutContentBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attorney_About"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_goneMarginTop="@dimen/_14sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="About"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/tvAbout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/lexend_deca"
+                        android:text=""
+                        android:textSize="@dimen/_10sdp" />
+
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contactBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/attorney_About">
+
+                    <TextView
+                        android:id="@+id/contact_Txt_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Contact"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/contact_map_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.521"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/contact_Txt_Button">
+
+                        <com.google.android.gms.maps.MapView
+                            android:id="@+id/mapFragment"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_140sdp"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/map_Zoomer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/contact_Txt_Button">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_14sdp"
+                            android:id="@+id/zoom_in"
+                            android:layout_height="@dimen/_14sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_13sdp"
+                                android:layout_height="@dimen/_13sdp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="@dimen/_1sdp"
+                                android:src="@drawable/baseline_add_24" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_14sdp"
+                            android:id="@+id/zoom_Out"
+                            android:layout_height="@dimen/_14sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_13sdp"
+                                android:layout_height="@dimen/_13sdp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="@dimen/_1sdp"
+                                android:layout_marginBottom="@dimen/_2sdp"
+                                android:src="@drawable/baseline_remove_24" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contatcts_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/contact_map_view">
+
+                        <TextView
+                            android:id="@+id/textview_law_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_11sdp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Pivotal Law Group"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:visibility="gone"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/contact_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            app:layout_constraintLeft_toLeftOf="parent">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:src="@drawable/office_vector" />
+
+                            <TextView
+                                android:id="@+id/tvPhone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:fontFamily="@font/normal_text"
+                                android:text="(206)010-000  Office"
+                                android:textColor="#424242"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/contact_no">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:src="@drawable/message_outline_color" />
+
+                            <TextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/_6sdp"
+                                android:fontFamily="@font/normal_text"
+                                android:text="johndoe@gmail.com"
+                                android:textColor="#424242"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/message">
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:src="@drawable/location_on" />
+
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:fontFamily="@font/normal_text"
+                                android:text="@string/cop_pell_virginia_seattle_wa_1200_5th_avenue_suite_1217_ibm_building"
+                                android:textColor="#424242"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>
+

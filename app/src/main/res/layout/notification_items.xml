@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePic"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:src="@drawable/demo_user"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_deca"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:text="Lorem ipsum dolor sit afdfdmet, conse ctetuer."
+        app:layout_constraintLeft_toRightOf="@+id/profilePic"/>
+
+    <TextView
+        android:id="@+id/daysAgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 days ago 07:40 PM"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        android:fontFamily="@font/lexend_deca"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:layout_constraintLeft_toRightOf="@+id/profilePic"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

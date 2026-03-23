@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--app:startDestination="@id/signUpFragment"-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.business.lawco.fragment.authfragment.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_signUpVerificationFragment"
+            app:destination="@id/signUpVerificationFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_termAndConditionFragment"
+            app:destination="@id/termAndConditionFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_claimProfileFragment"
+            app:destination="@id/claimProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.business.lawco.fragment.authfragment.signin.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_allowNotificationsFragment"
+            app:destination="@id/allowNotificationsFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_allowLocationFragment"
+            app:destination="@id/allowLocationFragment" />
+
+        <action
+            android:id="@+id/action_signInFragment_to_completeProfile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpVerificationFragment"
+        android:name="com.business.lawco.fragment.authfragment.signupverification.SignUpVerificationFragment"
+        android:label="fragment_sign_up_verification"
+        tools:layout="@layout/fragment_sign_up_verification" >
+        <action
+            android:id="@+id/action_signUpVerificationFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+
+        <action
+            android:id="@+id/action_signUpVerificationFragment_self"
+            app:destination="@id/signUpVerificationFragment" />
+        <action
+            android:id="@+id/action_signUpVerificationFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_signUpVerificationFragment_to_allowLocationFragment"
+            app:destination="@id/allowLocationFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.business.lawco.fragment.authfragment.forgotpassword.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_forgotVerificationFragment"
+            app:destination="@id/forgotVerificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotVerificationFragment"
+        android:name="com.business.lawco.fragment.authfragment.forgotpasswordverification.ForgotVerificationFragment"
+        android:label="fragment_forgot_verification"
+        tools:layout="@layout/fragment_forgot_verification" >
+        <action
+            android:id="@+id/action_forgotVerificationFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_forgotVerificationFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.business.lawco.fragment.authfragment.resetpassword.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_forgotVerificationFragment"
+            app:destination="@id/forgotVerificationFragment" />
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allowNotificationsFragment"
+        android:name="com.business.lawco.fragment.AllowNotificationsFragment"
+        android:label="fragment_allow_notifications"
+        tools:layout="@layout/fragment_allow_notifications" >
+        <action
+            android:id="@+id/action_allowNotificationsFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_allowNotificationsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allowLocationFragment"
+        android:name="com.business.lawco.fragment.AllowLocationFragment"
+        android:label="fragment_allow_location"
+        tools:layout="@layout/fragment_allow_location" >
+        <action
+            android:id="@+id/action_allowLocationFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_allowLocationFragment_to_allowNotificationsFragment"
+            app:destination="@id/allowNotificationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.completeprofile.CompleteProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_signUpVerificationFragment"
+            app:destination="@id/signUpVerificationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_allowLocationFragment"
+            app:destination="@id/allowLocationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_otpVerificationFragment3"
+            app:destination="@id/otpVerificationFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/termAndConditionFragment"
+        android:name="com.business.lawco.fragment.settingFragment.termscondition.TermAndConditionFragment"
+        android:label="TermAndConditionFragment"
+        tools:layout="@layout/fragment_term_and_condition">
+
+        <action
+            android:id="@+id/action_termAndConditionFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/otpVerificationFragment3"
+        android:name="com.business.lawco.fragment.OtpVerificationFragment"
+        android:label="OtpVerificationFragment" />
+    <fragment
+        android:id="@+id/claimProfileFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.claimMyProfile.ClaimProfileFragment"
+        android:label="ClaimProfileFragment" >
+        <action
+            android:id="@+id/action_claimProfileFragment_to_claimProfileDetailsFragment"
+            app:destination="@id/claimProfileDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/claimProfileDetailsFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.claimprofiledetails.ClaimProfileDetailsFragment"
+        android:label="ClaimProfileDetailsFragment" >
+        <action
+            android:id="@+id/action_claimProfileDetailsFragment_to_otpClaimVerificationFragment"
+            app:destination="@id/otpClaimVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpClaimVerificationFragment"
+        android:name="com.business.lawco.fragment.attronyfragment.claimprofiledetails.OtpClaimVerificationFragment"
+        android:label="OtpClaimVerificationFragment" />
+
+</navigation>

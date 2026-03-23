@@ -1,0 +1,31 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Green Oval -->
+    <item  android:width="@dimen/_130sdp"
+        android:height="@dimen/_130sdp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#1CEB7E1F"/>
+             <!-- Green color -->
+        </shape>
+    </item>
+
+    <!-- Red Oval -->
+    <item
+        android:width="@dimen/_90sdp"
+        android:height="@dimen/_90sdp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#33F0642C"/> <!-- Red color -->
+        </shape>
+    </item>
+
+    <!-- Blue Oval -->
+    <item
+        android:width="@dimen/_65sdp"
+        android:height="@dimen/_65sdp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#D7450E"/> <!-- Blue color -->
+        </shape>
+    </item>
+</layer-list>

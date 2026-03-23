@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activity.OnBoardingActivity">
+    <ImageView
+        android:id="@+id/imageBackOnBoarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_button_vector" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imageBackOnBoarding"
+        android:layout_above="@id/tabLayoutForIndicator" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutForIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_18sdp"
+        android:gravity="center"
+        android:layout_above="@id/textBtnNext"
+        app:tabBackground="@drawable/tab_pager_selector"
+        app:tabGravity="center"
+        android:background="@color/trans"
+        app:tabIndicatorHeight="0dp"
+        app:tabPaddingEnd="@dimen/_8sdp"
+        app:tabPaddingStart="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp" />
+    <TextView
+        android:id="@+id/textBtnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_95sdp"
+        android:layout_marginEnd="@dimen/_95sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/orange_button_identity"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_6sdp"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15ssp"/>
+</RelativeLayout>

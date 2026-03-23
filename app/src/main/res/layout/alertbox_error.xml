@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_270sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_box_bg"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="25dp">
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="@dimen/_20sdp"
+        android:visibility="gone"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_gravity="center|end"
+        android:background="@drawable/crossicon"
+        android:layout_height="@dimen/_20sdp"/>
+
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/log_out_vector"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:fontFamily="@font/normal_text"
+        android:gravity="center"
+        android:text=""
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginRight="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/orange_button_identity"
+        android:gravity="center"
+        android:text="Ok"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15sdp" />
+
+</LinearLayout>
+
+
+

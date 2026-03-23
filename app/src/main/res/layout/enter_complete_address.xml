@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/enter_new_location_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <ImageView
+            android:id="@+id/image_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/location_on_black" />
+
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/image_locate"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="New York, USA"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCity"
+            android:fontFamily="@font/lexend_deca"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/image_locate"
+            android:text="138 My Street, Kingston,  New York Zip code - 12402"
+            android:textColor="#474747"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@+id/tvAddress"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/orange_button_identity"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:textSize="@dimen/_12sdp"
+            android:text="Enter Complete Address"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

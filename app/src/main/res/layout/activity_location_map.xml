@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="commonViewModel"
+            type="com.business.lawco.networkModel.common.CommonViewModel" />
+
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".activity.LocationMapActivity">
+
+    <fragment
+        android:id="@+id/fm_mapid"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardViewforSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:background="@drawable/bottom_sheet_search_bar_shape"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/rlSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@null"
+                android:fontFamily="@font/lexend_deca_light"
+                android:hint="Search"
+                android:textSize="@dimen/_15ssp"
+                android:paddingStart="@dimen/_10sdp"
+                android:textColor="#BFBFBF" />
+
+
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:src="@drawable/search_icon" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/enter_new_location_bg">
+
+        <RelativeLayout
+            android:id="@+id/rl_Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/image_locate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/location_on_black" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/image_locate"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="New York, USA"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCity"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/image_locate"
+                android:text="138 My Street, Kingston,  New York Zip code - 12402"
+                android:textColor="#474747"
+                android:fontFamily="@font/lexend_deca"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_below="@+id/tvAddress"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/orange_button_identity"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:textSize="@dimen/_13sdp"
+                android:text="Enter Complete Address"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<!--    <com.agrawalsuneet.dotsloader.loaders.CircularDotsLoader-->
+<!--        android:id="@+id/tvProgressBar"-->
+<!--        android:layout_width="@dimen/_50sdp"-->
+<!--        android:layout_height="@dimen/_50sdp"-->
+<!--        android:elevation="@dimen/_10sdp"-->
+<!--        android:visibility="@{commonViewModel.isLoading?View.VISIBLE:View.GONE,default = gone}"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:loader_animDur="80"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        app:loader_bigCircleRadius="25dp"-->
+<!--        app:loader_circleRadius="@dimen/_5sdp"-->
+<!--        app:loader_defaultColor="@color/grey"-->
+<!--        app:loader_firstShadowColor="@color/grey"-->
+<!--        app:loader_secondShadowColor="@color/grey"-->
+<!--        app:loader_selectedColor="@color/red"-->
+<!--        app:loader_showRunningShadow="true" />-->
+</RelativeLayout>
+</layout>

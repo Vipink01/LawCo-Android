@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_2sdp"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_box_bg"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="25dp">
+
+    <!-- Root -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cross icon -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/crossAddCard"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/image_cross" />
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/AddCardTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="Add Card"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp" />
+
+        <!-- Card Holder -->
+        <TextView
+            android:id="@+id/cardHolderCh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Card Holder"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <EditText
+            android:id="@+id/etCardHolderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/card_edittext_bg1"
+            android:hint="Card Holder Name"
+            android:fontFamily="@font/lexend_deca_light"
+            android:padding="@dimen/_10sdp" />
+
+        <!-- Card Number -->
+        <TextView
+            android:id="@+id/cardNumberCh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Card Number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <com.braintreepayments.cardform.view.CardEditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/card_edittext_bg1"
+            android:hint="****   ****   ****   ****"
+            android:maxLength="16"
+            android:inputType="numberPassword"
+            android:fontFamily="@font/lexend_deca_light"
+            android:padding="@dimen/_10sdp" />
+
+        <!-- Expiry + CVV -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:paddingHorizontal="@dimen/_12sdp">
+
+            <!-- Expiry -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ExpiryDateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expiry Date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    android:fontFamily="@font/montserrat_semibold" />
+
+                <com.santalu.maskara.widget.MaskEditText
+                    android:id="@+id/etExpireDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_edittext_bg1"
+                    android:hint="Month / Year"
+                    android:maxLength="5"
+                    android:inputType="number"
+                    android:fontFamily="@font/lexend_deca_light"
+                    android:padding="@dimen/_10sdp"
+                    app:mask="##/##" />
+            </LinearLayout>
+
+            <!-- CVV -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/CVVtv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CVV"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    android:fontFamily="@font/montserrat_semibold" />
+
+                <com.braintreepayments.cardform.view.CvvEditText
+                    android:id="@+id/etCvv"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_edittext_bg1"
+                    android:hint="***"
+                    android:maxLength="3"
+                    android:inputType="numberPassword"
+                    android:fontFamily="@font/lexend_deca_light"
+                    android:padding="@dimen/_10sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Button -->
+        <TextView
+            android:id="@+id/btAddCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_14sdp"
+            android:background="@drawable/orange_button_identity"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_9sdp"
+            android:text="Add Card"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+
+<!--    android:layout_marginVertical="@dimen/_2sdp"-->
+<!--    android:background="@drawable/dialog_box_bg"-->
+<!--    app:cardBackgroundColor="@color/white"-->
+<!--android:layout_gravity="center"-->
+<!--    app:cardCornerRadius="25dp">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/crossAddCard"-->
+<!--            android:layout_width="@dimen/_23sdp"-->
+<!--            android:layout_height="@dimen/_23sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:layout_marginEnd="@dimen/_5sdp"-->
+<!--            android:src="@drawable/image_cross"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/AddCardTextView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Add Card"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_18ssp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/crossAddCard" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/cardHolderCh"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_20sdp"-->
+<!--            android:layout_marginTop="@dimen/_20sdp"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            android:text="Card Holder"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_13ssp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/AddCardTextView" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etCardHolderName"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:layout_marginRight="@dimen/_12sdp"-->
+<!--            android:background="@drawable/card_edittext_bg1"-->
+<!--            android:hint="Card Holder Name"-->
+<!--            android:inputType="text"-->
+<!--            android:fontFamily="@font/lexend_deca_light"-->
+<!--            android:paddingStart="@dimen/_20sdp"-->
+<!--            android:paddingTop="@dimen/_10sdp"-->
+<!--            android:paddingBottom="@dimen/_10sdp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/cardHolderCh" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/cardNumberCh"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_20sdp"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            android:text="Card Number"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_13ssp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/etCardHolderName" />-->
+
+<!--        <com.braintreepayments.cardform.view.CardEditText-->
+<!--            android:id="@+id/etCardNumber"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:layout_marginRight="@dimen/_12sdp"-->
+<!--            android:background="@drawable/card_edittext_bg1"-->
+<!--            android:hint="****   ****   ****   ****"-->
+<!--            android:inputType="numberPassword"-->
+<!--            android:maxLength="16"-->
+<!--            android:fontFamily="@font/lexend_deca_light"-->
+<!--            android:paddingStart="@dimen/_20sdp"-->
+<!--            android:paddingTop="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_10sdp"-->
+<!--            android:paddingBottom="@dimen/_10sdp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/cardNumberCh" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ExpiryDateTv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_20sdp"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:text="Expiry Date"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_13ssp"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/etCardNumber" />-->
+
+<!--        <com.santalu.maskara.widget.MaskEditText-->
+<!--            android:id="@+id/etExpireDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/ExpiryDateTv"-->
+<!--            android:background="@drawable/card_edittext_bg1"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:paddingStart="@dimen/_15sdp"-->
+<!--            android:fontFamily="@font/lexend_deca_light"-->
+<!--            android:paddingTop="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_60sdp"-->
+<!--            android:paddingBottom="@dimen/_10sdp"-->
+<!--            android:hint="Month / Year"-->
+<!--            android:inputType="number"-->
+<!--            android:maxLength="5"-->
+<!--            android:textSize="@dimen/_16sdp"-->
+<!--            app:mask="##/##"-->
+<!--            tools:ignore="MissingConstraints" />-->
+<!--&lt;!&ndash;-->
+<!--        <com.braintreepayments.cardform.view.ExpirationDateEditText-->
+<!--            android:id="@+id/etExpireDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:background="@drawable/card_edittext_bg1"-->
+<!--            android:hint="Month / Year"-->
+<!--            android:inputType="number"-->
+<!--            android:maxLength="5"-->
+<!--            android:paddingStart="@dimen/_15sdp"-->
+<!--            android:paddingTop="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_60sdp"-->
+<!--            android:paddingBottom="@dimen/_10sdp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/ExpiryDateTv" />&ndash;&gt;-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/CVVtv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:text="CVV"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_13ssp"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/ExpiryDateTv"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/etCardNumber" />-->
+
+<!--        <com.braintreepayments.cardform.view.CvvEditText-->
+<!--            android:id="@+id/etCvv"-->
+<!--            android:layout_width="@dimen/_70sdp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/_12sdp"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:background="@drawable/card_edittext_bg1"-->
+<!--            android:hint="***"-->
+<!--            android:maxLength="3"-->
+<!--            android:inputType="numberPassword"-->
+<!--            android:fontFamily="@font/lexend_deca_light"-->
+<!--            android:paddingStart="@dimen/_10sdp"-->
+<!--            android:paddingTop="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_20sdp"-->
+<!--            android:paddingBottom="@dimen/_10sdp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/etExpireDate"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/CVVtv" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/btAddCard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/_14sdp"-->
+<!--            android:layout_marginTop="@dimen/_20sdp"-->
+<!--            android:layout_marginRight="@dimen/_14sdp"-->
+<!--            android:layout_marginBottom="@dimen/_20sdp"-->
+<!--            android:background="@drawable/orange_button_identity"-->
+<!--            android:fontFamily="@font/montserrat_semibold"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingTop="@dimen/_7sdp"-->
+<!--            android:paddingBottom="@dimen/_9sdp"-->
+<!--            android:text="Add Card"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/_15ssp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/etExpireDate" />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--</androidx.cardview.widget.CardView>-->

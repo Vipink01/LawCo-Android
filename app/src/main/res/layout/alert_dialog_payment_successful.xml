@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_270sdp"
+    android:layout_height="@dimen/_270sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/dialog_box_bg"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="25dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/success_vector" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="Payment Successful!"
+            android:textColor="#000000"
+            android:textSize="@dimen/_21sdp" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/lexend_deca_light"
+            android:gravity="center"
+            android:text="Your payment has been successfully done."
+            android:textAlignment="center"
+            android:textColor="#424242"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/pass_btn_okay1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_marginRight="@dimen/_65sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/orange_button_identity"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="Ok"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_15sdp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="consumerHomeScreenViewModel"
+            type="com.business.lawco.networkModel.homeScreen.consumer.ConsumerHomeScreenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.consumerfragment.category.ConsumerCategoryFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewCategorySearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_75sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintHeight_max="@dimen/_120sdp"
+            app:layout_constraintHeight_min="@dimen/_40sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/header_title"
+            tools:ignore="NotSibling">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCategorySearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarSize="@dimen/_4sdp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbarThumbVertical="@color/orange"
+                    android:scrollbarTrackVertical="@color/line"
+                    android:scrollbars="vertical"
+                    android:visibility="visible"
+                    tools:listitem="@layout/item_view" />
+                <TextView
+                    android:id="@+id/tv_noData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:text="No Data Found"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_85sdp"
+            android:background="@drawable/dark_blue_bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrowWhite"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/arrow_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TextCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_horizontal"
+                android:text="Categories"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/RelativeLayoutforSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/search_white_bg"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/RlFilter"
+                app:layout_constraintTop_toBottomOf="@+id/TextCategories">
+
+
+                <EditText
+                    android:id="@+id/EtSearchForCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:background="@null"
+                    android:fontFamily="@font/lexend_deca_light"
+                    android:hint="Search a Category"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:textAlignment="textStart"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/item_clear_click_parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/search_id"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/item_clear_icon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/cross_like"
+                        app:tint="#090000" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/search_id"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp">
+
+                    <ImageView
+                        android:id="@+id/item_menu_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/search_bar" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RlFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+                android:background="@drawable/filter_orange_bg"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingTop="@dimen/_9sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TextCategories">
+
+                <ImageView
+                    android:id="@+id/imageFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/filter_vector" />
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/categorypLayoutRefresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_title">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvCategoriesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:scrollbars="vertical"
+                    app:spanCount="3"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/catogeries_item2" />
+                <TextView
+                    android:id="@+id/textNoDataFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Data Found"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/orange_dark"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

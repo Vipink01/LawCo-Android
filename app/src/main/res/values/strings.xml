@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">LawCo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="by_signing_up_you_agree_to_ou_term_and_condition">By Signing up you agree to <b><u>our term  &amp;  Condition</u></b></string>
+    <string name="successfully">Your account has been created\n successfully.</string>
+    <string name="password_change">Your password has been changed successfully.</string>
+    <string name="map_api_key">AIzaSyC9NuN_f-wESHh3kihTvpbvdrmKlTQurxw</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="resend"><u>RESEND</u></string>
+    <string name="Swaziland">Swaziland</string>
+    <string name="About">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing
+</string>
+    <string name="resend1"><u>RESEND</u></string>
+    <string name="attorneyOnboarding1">Join LawCo to grow your legal\n practice and connect with clients\n in need.</string>
+    <string name="attorneyOnboarding2">Customize your profile to spotlight\n your expertise and attract potential\n clients.</string>
+    <string name="attorneyOnboarding3">Seamlessly handle appointments and\n availability, taking control of your\n legal practice.</string>
+    <string name="consumerOnboarding1">Join LawCo to grow your legal\n practice and connect with clients\n in need. </string>
+    <string name="consumerOnboarding2">Select your legal needs and connect\n with specialized attorneys\n seamlessly.</string>
+    <string name="consumerOnboarding3">Browse profiles, reviews, and \nspecialties to connect securely with \nyour ideal attorney.</string>
+    <string name="choose_your_legal_expert">Choose Your Legal\nExpert</string>
+    <string name="your_card_has_been_added_successfully">Your Card Has Been Added\n Successfully.</string>
+    <string name="by_signing_up_you_agree_to_our_term_amp_condition">By Signing up you agree to our term &amp; \n Condition.</string>
+    <string name="Choose_Your_Legal_Expert">Choose Your Legal\nExpert</string>
+    <string name="cop_pell_virginia_seattle_wa_1200_5th_avenue_suite_1217_ibm_building">Cop pell, Virginia Seattle, WA 1200 5th Avenue, Suite 1217 IBM Building</string>
+    <string name="connections">Connections</string>
+    <string name="search_an_attorney">Search an Attorneys</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="preferred_phone_number">Preferred Phone Number</string>
+    <string name="location">Location</string>
+    <string name="area_of_practice">Area of Practice</string>
+    <string name="attorney_registration_number">Attorney Registration Number</string>
+    <string name="about">About</string>
+    <string name="edit">Edit</string>
+    <string name="create_an_account">Don\'t have an account? Sign Up</string>
+    <string name="firebase_webclient_id">234470772287-4pban11bo5eqem6ae4o6qbops25jvcmt.apps.googleusercontent.com</string>
+    <string name="app_id">1:234470772287:android:8d6084201d7e1d41d7f28a</string>
+    <string name="already_have_an_account">Already have an account? Sign In</string>
+    <string name="didn_t_receive_the_verification_code">Didn\'t receive the verification code?</string>
+
+
+    <!-- Error Message-->
+    <string name="server_error">Server Error!</string>
+    <string name="no_internet">Check  your internet connection</string>
+    <string name="leadError">Your available credits have been fully utilized. Please upgrade your plan to unlock additional credits.</string>
+    <string name="fill_name">Please enter name</string>
+    <string name="fill_email">Email / Phone field can\'t be empty!</string>
+    <string name="fill_emailOnly">Please enter email</string>
+    <string name="fillValidEmailOnly">Please enter valid email</string>
+    <string name="fill_valid_email"> Email or phone number is not valid.</string>
+    <string name="fill_valid_email_only"> Email is not valid.</string>
+    <string name="email_verify"> Email verify first.</string>
+    <string name="Phone_verify"> Phone verify first.</string>
+    <string name="fill_valid_email_phone">Please enter the valid email/ phone</string>
+    <string name="fill_phone">Please enter phone number</string>
+    <string name="fill_location">Location field can\'t be empty!</string>
+    <string name="fill_area_practice">Please Select Area of practice</string>
+    <string name="fill_registration_number">Registration Number field can\'t be empty!</string>
+    <string name="fill_about">About field can\'t be empty!</string>
+    <string name="fill_profile">Please Select profile picture</string>
+    <string name="fill_valid_phone">Please enter the valid phone number</string>
+    <string name="fill_password">Password field can\'t be empty!</string>
+    <!--    <string name="password_validation_text">Please include that at least 1 uppercase also should be there and min 8 characters</string>-->
+    <string name="password_validation_text">The password should be a minimum eight characters long and should at Enter at least 1 number, 1 alphabet and 1 special character.</string>
+    <!--    <string name="password_validation_text">Enter atLeast 1 number, 1 alphabet and 1 special character..</string>-->
+    <string name="fill_message">Message field can\'t be empty!</string>
+    <string name="accept_term_condition">"Please accept the terms and condition"</string>
+    <string name="fill_otp">Incorrect verification code, please try again!</string>
+    <string name="fill_complete_otp">Otp Should be 4 digit</string>
+    <string name="fill_new_password">New Password field can\'t be empty!</string>
+    <string name="fill_confirm_new_password">Confirm New Password field can\'t be empty!</string>
+    <string name="password_not_match">Create pass and confirm pass should be matched</string>
+    <string name="otp_Send">Otp Send Successfully</string>
+    <string name="user_type_not_found">User Type Not Found</string>
+    <string name="valid_card_number">Please Enter valid card number</string>
+    <string name="valid_card_type">Please enter details of valid card</string>
+    <string name="valid_expireDate">Please enter valid expiration date</string>
+    <string name="valid_cvv">Please enter valid cvv code</string>
+    <string name="enter_cvv">Please enter cvv</string>
+    <string name="already_req">You have already sent a request.</string>
+    <string name="otp_empty">Please enter the Verification Code.</string>
+    <string name="otp_not_full">Please enter the complete verification code</string>
+    <string name="otp_valid">Incorrect verification code, please try again!</string>
+
+
+    <string name="facebook_app_id">676159851782722</string>
+    <string name="fb_login_protocol_scheme">fb676159851782722</string>
+    <string name="facebook_client_token">2520a79421be81972584483e8f6290ff</string>
+    <string name="todo">TODO</string>
+    <string name="submit">Submit</string>
+    <string name="resend_verification_code_in">Resend verification code in</string>
+    <string name="_00_00">00:00</string>
+    <string name="enter_the_verification_code_sent_to_your_registered_email_phone">Enter the verification code sent to your registered email/phone.</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="if_you_continue_to_experience_issues_please_contact_support_for_assistance"><![CDATA[If you continue to experience issues, please contact support for assistance.]]></string>
+    <string name="notifications">Notifications</string>
+    <string name="my_transactions">My Transactions</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="logout">Logout</string>
+    <string name="pay_as_you_go">Pay as you go</string>
+
+
+</resources>

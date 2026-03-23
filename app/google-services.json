@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828718758675",
+    "project_id": "get-lawco",
+    "storage_bucket": "get-lawco.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828718758675:android:facc22dc262f50e1a878e6",
+        "android_client_info": {
+          "package_name": "com.business.lawco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtd2UEHH_tl0rrNxEGvE17Gi0NA0pUvdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

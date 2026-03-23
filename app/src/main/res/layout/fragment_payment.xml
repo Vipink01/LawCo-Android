@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="paymentManagementViewModel"
+            type="com.business.lawco.networkModel.paymentManagement.PaymentManagementViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/dark_blue_bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:padding="@dimen/_4sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_white" />
+
+            <TextView
+                android:id="@+id/Payment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="Payment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <!--  Directly Pay From Card Card Box -->
+        <LinearLayout
+            android:id="@+id/directPaymentBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_below="@+id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_edittext_bg1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cardHolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Card Holder"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"/>
+
+                <EditText
+                    android:id="@+id/etCardHolderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/card_edittext_bg1"
+                    android:fontFamily="@font/lexend_deca"
+                    android:hint="Card Holder Name"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"/>
+
+                <TextView
+                    android:id="@+id/cardNumberHolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Card Number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <com.braintreepayments.cardform.view.CardEditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/card_edittext_bg1"
+                    android:hint="****  ****  ****  ****"
+                    android:inputType="numberPassword"
+                    android:maxLength="16"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_8sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="2.2">
+
+                        <TextView
+                            android:id="@+id/ExpDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Exp Date"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <com.santalu.maskara.widget.MaskEditText
+                            android:id="@+id/etExpireDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:background="@drawable/card_edittext_bg1"
+                            android:gravity="center_vertical"
+                            android:hint="Month / Year"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:fontFamily="@font/lexend_deca"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:textSize="@dimen/_16sdp"
+                            app:mask="##/##" />
+
+                        <!--<com.braintreepayments.cardform.view.ExpirationDateEditText
+                            android:id="@+id/etExpireDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:maxLength="5"
+                            android:background="@drawable/card_edittext_bg1"
+                            android:fontFamily="@font/normal_text"
+                            android:hint="MM/YY"
+                            android:inputType="number"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingVertical="@dimen/_8sdp" />-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1.8">
+
+                        <TextView
+                            android:id="@+id/CVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="CVV"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <com.braintreepayments.cardform.view.CvvEditText
+                            android:id="@+id/etCvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/card_edittext_bg1"
+                            android:hint="* * *"
+                            android:fontFamily="@font/lexend_deca"
+                            android:inputType="numberPassword"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:textAlignment="textStart" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:buttonTint="#B3000000"
+                    android:fontFamily="@font/lexend_deca"
+                    android:gravity="center"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:text="Save a card for future transactions." />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btPaymentSubcription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/orange_button_identity"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Pay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/PaymentCardView"
+                tools:layout_editor_absoluteX="78dp" />
+
+        </LinearLayout>
+
+        <!-- No Card Box -->
+        <LinearLayout
+            android:id="@+id/noCardBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/no_card"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="You Have No Saved Cards."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:fontFamily="@font/montserrat"
+                android:text="Lorem ipsum dolor sit amet, consecte tuer adipiscing elit. Aenean commod o ligula eget dolor."
+                android:textAlignment="center"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/btAddCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/orange_button_identity"
+                android:gravity="center"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Add Card"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/Dscard" />
+
+        </LinearLayout>
+
+        <!-- Display All Card Card Box -->
+        <ScrollView
+            android:id="@+id/cardListBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:fillViewport="true"
+            android:layout_below="@+id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/SavedCardHadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Saved Card"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cardRcv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    tools:listitem="@layout/payment_card_item" />
+
+                <LinearLayout
+                    android:id="@+id/btAddCard1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="right"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/_15sdp">
+
+                    <ImageView
+                        android:id="@+id/imageViewAddCardForSavedCard"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_card" />
+
+                    <TextView
+                        android:id="@+id/textAddCardForSavedCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Add Card"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btPayNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/orange_button_identity"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:text="Pay Now"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/btAddCard1" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</layout>

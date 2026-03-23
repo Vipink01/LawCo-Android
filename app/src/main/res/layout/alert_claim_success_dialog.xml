@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
+    android:padding="@dimen/_20sdp">
+
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/add_card"
+        android:layout_marginBottom="@dimen/_15sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Profile Claimed!"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginBottom="@dimen/_10sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="You have successfully claimed this profile.\nYou can now manage it from your account."
+        android:fontFamily="@font/montserrat"
+        android:textColor="#666666"
+        android:textSize="@dimen/_12ssp"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/_20sdp" />
+
+    <TextView
+        android:id="@+id/btnOkay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Okay"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:background="@drawable/orange_button_identity"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp" />
+
+</LinearLayout>

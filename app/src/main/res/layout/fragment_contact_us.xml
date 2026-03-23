@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="commonViewModel"
+            type="com.business.lawco.networkModel.common.CommonViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.settingFragment.contactus.ContactUsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrowWhiteContact"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/arrow_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Transactions"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="Contact Us"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/contactlogo"
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/contact_us_logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contactlogo">
+
+                    <RelativeLayout
+                        android:id="@+id/NameBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/editext_bg"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/NameIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/vector_bg"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/name_vector" />
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_13sdp"
+                            android:layout_toEndOf="@+id/NameIv"
+                            android:background="@null"
+                            android:fontFamily="@font/lexend_deca_light"
+                            android:hint="Full Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#424242"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/emailBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/editext_bg"
+                        app:layout_constraintTop_toBottomOf="@+id/NameBox">
+
+                        <ImageView
+                            android:id="@+id/emailIv"
+                            android:layout_width="@dimen/_43sdp"
+                            android:layout_height="@dimen/_43sdp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/vector_bg"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/email_vector" />
+
+                        <EditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_toEndOf="@+id/emailIv"
+                            android:background="@null"
+                            android:editable="false"
+                            android:fontFamily="@font/lexend_deca_light"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress"
+                            android:textColor="#424242"
+                            android:textSize="@dimen/_12ssp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/phoneBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/editext_bg"
+                        app:layout_constraintTop_toBottomOf="@+id/emailBox">
+
+                        <ImageView
+                            android:id="@+id/phoneIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+
+                            android:background="@drawable/vector_bg"
+                            android:padding="@dimen/_11sdp"
+                            android:src="@drawable/phone_vector" />
+
+                        <EditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_13sdp"
+                            android:layout_toEndOf="@+id/phoneIv"
+                            android:background="@null"
+                            android:maxLength="10"
+                            android:fontFamily="@font/lexend_deca_light"
+                            android:hint="Phone Number"
+                            android:inputType="phone"
+                            android:textColor="#424242"
+                            android:textSize="@dimen/_12ssp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/MessageRl"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/about_bg"
+
+
+                        app:layout_constraintTop_toBottomOf="@+id/phoneBox">
+
+
+                        <EditText
+                            android:id="@+id/etMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="22dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@null"
+                            android:fontFamily="@font/lexend_deca_light"
+                            android:gravity="start"
+                            android:hint="Message"
+                            android:maxLength="200"
+                            android:textSize="@dimen/_12ssp"
+                            android:textColor="#424242"
+                            android:inputType="textMultiLine"
+                            android:maxLines="4" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/btSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/orange_button_identity"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_9sdp"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/MessageRl" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+<!--        <com.agrawalsuneet.dotsloader.loaders.CircularDotsLoader-->
+<!--            android:id="@+id/tvProgressBar"-->
+<!--            android:layout_width="@dimen/_50sdp"-->
+<!--            android:layout_height="@dimen/_50sdp"-->
+<!--            android:elevation="@dimen/_10sdp"-->
+<!--            android:visibility="@{commonViewModel.isLoading?View.VISIBLE:View.GONE,default = gone}"-->
+<!--            app:loader_animDur="80"-->
+<!--            app:loader_bigCircleRadius="25dp"-->
+<!--            app:loader_circleRadius="@dimen/_5sdp"-->
+<!--            app:loader_defaultColor="@color/grey"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:loader_firstShadowColor="@color/grey"-->
+<!--            app:loader_secondShadowColor="@color/grey"-->
+<!--            app:loader_selectedColor="@color/red"-->
+<!--            app:loader_showRunningShadow="true"-->
+<!--            tools:ignore="MissingClass" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

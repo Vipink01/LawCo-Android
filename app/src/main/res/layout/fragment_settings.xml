@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="commonViewModel"
+            type="com.business.lawco.networkModel.common.CommonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.SettingsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/dark_blue_bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrowWhite"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:padding="@dimen/_6sdp"
+                android:visibility="gone"
+                android:src="@drawable/arrow_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SettingDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Settings"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:id="@+id/scView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_50sdp">
+                <TextView
+                    android:id="@+id/ProfileCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="My Profile"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_14ssp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/aboutCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="About Us"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/SubscriptionCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector"
+                    android:fontFamily="@font/montserrat"
+                    android:text="My Subscription"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+                <View
+                    android:id="@+id/viewSubscription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/PaymentCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Payment Methods"
+                    android:gravity="center|start"
+                    android:visibility="gone"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+                <View
+                    android:id="@+id/viewPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:id="@+id/TransactionsCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/my_transactions"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+                <View
+                    android:id="@+id/viewTransactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/NotificationsCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/notifications"
+                    android:textColor="@color/black"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14ssp"
+                    android:drawableEnd="@drawable/orange_right_vector" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line"
+                    />
+
+                <TextView
+                    android:id="@+id/ContactCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/contact_us"
+                    android:textColor="@color/black"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14ssp"
+                    app:drawableEndCompat="@drawable/orange_right_vector" />
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line"
+                    />
+
+                <TextView
+                    android:id="@+id/PrivacyCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/black"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14ssp"
+                    app:drawableEndCompat="@drawable/orange_right_vector"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/TermsCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/terms_amp_conditions"
+                    android:textColor="@color/black"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14ssp"
+                    app:drawableEndCompat="@drawable/orange_right_vector"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+                <TextView
+                    android:id="@+id/DeleteCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/delete_account"
+                    android:textColor="@color/black"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14ssp"
+                    app:drawableEndCompat="@drawable/orange_right_vector" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line"
+                    />
+                <TextView
+                    android:id="@+id/LogoutCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/logout"
+                    android:gravity="center|start"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/orange_right_vector"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/line" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
